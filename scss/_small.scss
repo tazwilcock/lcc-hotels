@@ -1,0 +1,220 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  height: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: $bodyText;
+}
+
+#pageWrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+#headerWrapper {
+  background-color: $headerBgColor;
+  color: $headerText;
+}
+
+.moveOver > .content {
+  transform: translateX(-180px);
+}
+
+.content {
+  transition: transform 500ms ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px $gutter;
+  align-items: center;
+
+  a img {
+    height: 50px;
+    padding-right: 10px;
+  }
+  .logo-hotel-name {
+    display: flex;
+    align-items: center;
+  }
+  h1 {
+    font-family: $titleText;
+    font-size: 20px;
+  }
+  button {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    align-self: start;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    text-align: right;
+    color: $headerText;
+  }
+}
+
+nav {
+  background-color: $lightAccentColor;
+  width: 180px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(100%);
+  div {
+    color: $headerText;
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    font-family: $titleText;
+    background-color: $lightAccentColor;
+    border-bottom: 1px solid $headerText;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li a {
+      display: block;
+      color: $headerText;
+      padding: 6px 10px;
+      text-align: right;
+      text-decoration: none;
+      border-bottom: 1px solid $headerText;
+
+      &:hover {
+        background-color: $headerBgColor;
+      }
+    }
+    li.active a {
+      background-color: $headerBgColor;
+    }
+  }
+}
+
+#mainWrapper {
+  background-color: #f7f7f7;
+}
+
+main {
+  padding: 0 $gutter;
+  display: grid;
+  .hero {
+    h2 {
+      padding-top: 40px;
+      width: 250px;
+      text-align: center;
+      color: $headerText;
+      font-family: $titleText;
+      font-size: 1.4rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .sub-heading {
+      font-family: $titleText;
+      color: $headerText;
+      text-align: center;
+      font-weight: bold;
+      padding-top: 10px;
+      margin: 0;
+    }
+    p {
+      font-family: $titleText;
+      color: $headerText;
+      font-weight: bold;
+      padding-top: 50px;
+      margin-top: 0;
+      margin-bottom: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.2rem;
+      border-bottom: 2px solid $lightAccentColor;
+      max-width: fit-content;
+    }
+  }
+
+  .cards {
+    section {
+      display: grid;
+      grid-template-areas: "photo" "title" "address" "book" "phone";
+      padding: 1rem;
+      background-color: $lightAccentColor;
+      margin-bottom: 2rem;
+      margin-right: auto;
+      margin-left: auto;
+      border-radius: 20px;
+      max-width: 273px;
+      img {
+        grid-area: photo;
+        width: 240px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 1px 1px 5px;
+      }
+      h3 {
+        grid-area: title;
+        font-size: 1.4rem;
+        font-family: $titleText;
+        color: #89290b;
+      }
+      address {
+        grid-area: address;
+        font-family: $bodyText;
+        color: $headerText;
+        padding-bottom: 10px;
+        font-style: normal;
+      }
+      p {
+        color: #4a3dff;
+        grid-area: book;
+        padding: 10px 0;
+        margin: 0;
+        font-family: $titleText;
+      }
+      a {
+        grid-area: phone;
+        text-decoration: none;
+        color: #89290b;
+        background-color: $headerBgColor;
+        width: fit-content;
+        padding: 0.4rem 1.3rem;
+        border-radius: 30px;
+      }
+    }
+  }
+}
+
+#footerWrapper {
+  background-color: $headerBgColor;
+}
+
+footer {
+  padding: 0.7rem $gutter;
+  font-family: $titleText;
+  color: $headerText;
+  text-align: center;
+  p {
+    margin: 0;
+    font-weight: 100;
+  }
+}

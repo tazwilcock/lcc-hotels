@@ -1,0 +1,52 @@
+header {
+  a img {
+    height: 60px;
+  }
+}
+
+main {
+  h2 {
+    padding-top: 40px;
+    width: 350px;
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+
+  .cards {
+    section {
+      grid-template-areas: "photo title" " photo address" "photo book" "photo phone";
+      padding: 1rem;
+      background-color: $lightAccentColor;
+      margin-bottom: 2rem;
+      border-radius: 20px;
+      max-width: 600px;
+      img {
+        grid-area: photo;
+        width: 280px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 1px 1px 5px;
+      }
+      h3 {
+        padding: 0;
+        margin: 0;
+        grid-area: title;
+        font-size: 1.4rem;
+        font-family: $titleText;
+        color: #89290b;
+      }
+      address {
+        grid-area: address;
+        font-family: $bodyText;
+        color: $headerText;
+        padding-bottom: 10px;
+        font-style: normal;
+      }
+      a {
+        height: 34px;
+      }
+    }
+  }
+}
