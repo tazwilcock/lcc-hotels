@@ -493,7 +493,8 @@ main .cards section address {
   font-style: normal;
 }
 main .cards section p {
-  color: #4a3dff;
+  color: #89290b;
+  text-shadow: 1px 1px 25px white;
   grid-area: book;
   padding: 10px 0;
   margin: 0;
